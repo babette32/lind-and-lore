@@ -1,0 +1,119 @@
+.resources-intro {
+  max-width: 900px;
+  margin-bottom: clamp(42px, 6vw, 72px);
+}
+
+.resource-framework {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(42px, 6vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  border-right: 0;
+}
+
+.resource-framework li {
+  min-height: 220px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+  background: rgba(232, 225, 210, .38);
+}
+
+.resource-framework li:nth-child(even) {
+  background: rgba(246, 244, 238, .7);
+}
+
+.resource-framework span {
+  font: 600 .65rem var(--sans);
+  letter-spacing: .14em;
+  color: var(--terracotta);
+  margin-bottom: 2rem;
+}
+
+.resource-framework strong {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--forest);
+  margin-bottom: .8rem;
+}
+
+.resource-framework small {
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.resource-callout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(230px, .55fr);
+  gap: 3rem;
+  align-items: center;
+  background: var(--oat);
+  border-left: 4px solid var(--honey);
+  padding: clamp(28px, 5vw, 55px);
+}
+
+.resource-callout h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+}
+
+.resource-actions {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.activity-card {
+  margin-top: 2.2rem;
+  padding: clamp(24px, 4vw, 40px);
+  background: var(--oat);
+  border-left: 4px solid var(--honey);
+}
+
+.activity-card h3 {
+  font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+}
+
+.activity-card p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+  .resource-framework {
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 0;
+  }
+
+  .resource-framework li {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .resource-framework li:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .resource-callout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .resource-framework {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-framework li:last-child {
+    grid-column: auto;
+  }
+
+  .resource-framework li {
+    min-height: auto;
+  }
+
+  .resource-actions .button {
+    width: 100%;
+  }
+}
